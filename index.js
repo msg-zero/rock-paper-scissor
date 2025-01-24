@@ -4,9 +4,12 @@ alert(
 );
 // create variables computerScore and humanScore to store computer and human score
 // initialize computerScore and humanScore to 0
+let computerScore = 0;
+let humanScore = 0;
 
 // create variable called roundNumber to record number of rounds
 // initialize roundNumber to 0
+let roundNumber = 0;
 
 // create function called getComputerChoice to get a random choice from computer
 
