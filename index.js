@@ -1,5 +1,7 @@
 // display instructions
-
+alert(
+"Rock-Paper-Scissors\nThere will be five rounds and the one with highest score will WIN!"
+);
 // create variables computerScore and humanScore to store computer and human score
 // initialize computerScore and humanScore to 0
 
