@@ -61,27 +61,17 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
   // increment roundNumber
   roundNumber++;
-  // IF roundNumber <=5 THEN
-  if (roundNumber <= 5) {
-    // get computer choice
-    let computerChoice = getComputerChoice();
-    // get human choice
-    let humanChoice = getHumanChoice();
-    // start game
-    // evaluate winner
-    playRound(humanChoice, computerChoice);
-  } else {
-    // ELSE
-    // display total score and winner
-    if (humanScore === computerScore) {
-      alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-    } else if (humanScore < computerScore) {
-      alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-    } else {
-      alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-    }
-  }
+  // get computer choice
+  let computerChoice = getComputerChoice();
+  // get human choice
+  let humanChoice = getHumanChoice();
+  // start game
+  // evaluate winner
+  playRound(humanChoice, computerChoice);
 }
-// ENDIF
+
+// WHILE roundNumber <=5, call playGame()
+
+// DISPLAY final result
 
 // prompt the user to exit or play again
