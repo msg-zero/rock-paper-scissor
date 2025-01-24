@@ -100,3 +100,5 @@ function game() {
 
   alert("Thank you for playing.\nHave a nice DAY!");
 }
+
+game();
