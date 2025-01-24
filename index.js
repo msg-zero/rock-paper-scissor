@@ -78,7 +78,7 @@ function game() {
     computerScore = 0;
     roundNumber = 0;
 
-    // WHILE roundNumber <=5, call playGame()
+    // WHILE roundNumber <5, call playGame()
     while (roundNumber < 5) {
       // increment roundNumber
       roundNumber++;
@@ -87,11 +87,11 @@ function game() {
 
     // DISPLAY final result
     if (humanScore === computerScore) {
-      alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+      alert(`It's a TIE!\nYou : ${humanScore}  Computer : ${computerScore}`);
     } else if (humanScore < computerScore) {
-      alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+      alert(`You LOST!\nYou : ${humanScore}  Computer : ${computerScore}`);
     } else {
-      alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+      alert(`You WON!\nYou : ${humanScore}  Computer : ${computerScore}`);
     }
 
     // prompt the user to exit or play again
