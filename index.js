@@ -11,7 +11,7 @@ let humanScore = 0;
 // initialize roundNumber to 0
 let roundNumber = 0;
 
-// create variable called playAgain 
+// create variable called playAgain
 let playAgain;
 
 // create function called getComputerChoice to get a random choice from computer
@@ -39,6 +39,8 @@ function getHumanChoice() {
 }
 
 // create function called playRound with arguments humanChoice and computerChoice to evaluate result
+// increment score with respect to winner
+// display result
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
@@ -56,15 +58,30 @@ function playRound(humanChoice, computerChoice) {
 }
 
 // create function called playGame to call playRound() when roundNumber <=5
-// IF roundNumber <=5 THEN
-// increment roundNumber
-// start game
-// get computer choice
-// get human choice
-// evaluate winner
-// increment score with respect to winner
-// display result
-// ELSE
-// display total score and winner
-// prompt the user to exit or play again
+function playGame() {
+  // increment roundNumber
+  roundNumber++;
+  // IF roundNumber <=5 THEN
+  if (roundNumber <= 5) {
+    // get computer choice
+    let computerChoice = getComputerChoice();
+    // get human choice
+    let humanChoice = getHumanChoice();
+    // start game
+    // evaluate winner
+    playRound(humanChoice, computerChoice);
+  } else {
+    // ELSE
+    // display total score and winner
+    if (humanScore === computerScore) {
+      alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    } else if (humanScore < computerScore) {
+      alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    } else {
+      alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    }
+  }
+}
 // ENDIF
+
+// prompt the user to exit or play again
