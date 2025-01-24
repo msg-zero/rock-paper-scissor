@@ -57,8 +57,6 @@ function playRound(humanChoice, computerChoice) {
 
 // create function called playGame to call playRound() when roundNumber <=5
 function playGame() {
-  // increment roundNumber
-  roundNumber++;
   // get computer choice
   let computerChoice = getComputerChoice();
   // get human choice
@@ -70,6 +68,8 @@ function playGame() {
 
 // WHILE roundNumber <=5, call playGame()
 while (roundNumber <= 5) {
+  // increment roundNumber
+  roundNumber++;
   playGame();
 }
 
