@@ -71,6 +71,9 @@ function playGame() {
 }
 
 // WHILE roundNumber <=5, call playGame()
+while (roundNumber <= 5) {
+  playGame();
+}
 
 // DISPLAY final result
 
