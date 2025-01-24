@@ -15,9 +15,9 @@ let roundNumber = 0;
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3) + 1;
 
-  if (choice === 1) return ROCK;
-  else if (choice === 2) return PAPER;
-  else return SCISSOR;
+  if (choice === 1) return "ROCK";
+  else if (choice === 2) return "PAPER";
+  else return "SCISSOR";
 }
 
 // create function called getHumanChoice to get human choice
@@ -30,7 +30,7 @@ function getHumanChoice() {
       ""
     );
     choice = choice.toUpperCase();
-  } while (choice !== ROCK || choice !== PAPER || choice !== SCISSOR);
+  } while (choice !== "ROCK" || choice !== "PAPER" || choice !== "SCISSOR");
 
   return choice;
 }
