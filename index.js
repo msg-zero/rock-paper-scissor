@@ -11,6 +11,9 @@ let humanScore = 0;
 // initialize roundNumber to 0
 let roundNumber = 0;
 
+// create variable called playAgain 
+let playAgain;
+
 // create function called getComputerChoice to get a random choice from computer
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3) + 1;
