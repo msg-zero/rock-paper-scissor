@@ -68,21 +68,35 @@ function playGame() {
 
 // create function called game to control whole game
 function game() {
-  // WHILE roundNumber <=5, call playGame()
-  while (roundNumber <= 5) {
-    // increment roundNumber
-    roundNumber++;
-    playGame();
-  }
+  // create variable called play to determine if user want to play again
+  let playAgain;
 
-  // DISPLAY final result
-  if (humanScore === computerScore) {
-    alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-  } else if (humanScore < computerScore) {
-    alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-  } else {
-    alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
-  }
+  // when play is true
+  do {
+    // reset all variables for playing again
+    humanScore = 0;
+    computerScore = 0;
+    roundNumber = 0;
 
-  // prompt the user to exit or play again
+    // WHILE roundNumber <=5, call playGame()
+    while (roundNumber < 5) {
+      // increment roundNumber
+      roundNumber++;
+      playGame();
+    }
+
+    // DISPLAY final result
+    if (humanScore === computerScore) {
+      alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    } else if (humanScore < computerScore) {
+      alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    } else {
+      alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+    }
+
+    // prompt the user to exit or play again
+    playAgain = confirm("Do you want to play again?")
+  } while (playAgain == true);
+
+  alert("Thank you for playing.\nHave a nice DAY!");
 }
