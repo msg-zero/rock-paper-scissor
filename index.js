@@ -76,5 +76,12 @@ while (roundNumber <= 5) {
 }
 
 // DISPLAY final result
+if (humanScore === computerScore) {
+  alert(`It's a TIE!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+} else if (humanScore < computerScore) {
+  alert(`You LOST!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+} else {
+  alert(`You WON!\nYou : ${humanChoice}  Computer : ${computerChoice}`);
+}
 
 // prompt the user to exit or play again
