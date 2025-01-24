@@ -82,6 +82,10 @@ function game() {
     while (roundNumber < 5) {
       // increment roundNumber
       roundNumber++;
+
+      // end game if one scores 3 
+      if (humanScore === 3 || computerScore === 3) break;
+      
       playGame();
     }
 
