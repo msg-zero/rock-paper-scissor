@@ -32,8 +32,9 @@ function getHumanChoice() {
       `Round : ${roundNumber}\nSCORE : User = ${humanScore}  Computer = ${computerScore}\nEnter ROCK, PAPER or SCISSOR`,
       ""
     );
+    if (!choice) continue;
     choice = choice.toUpperCase();
-  } while (choice !== "ROCK" || choice !== "PAPER" || choice !== "SCISSOR");
+  } while (choice !== "ROCK" && choice !== "PAPER" && choice !== "SCISSOR");
 
   return choice;
 }
