@@ -11,6 +11,9 @@ let humanScore = 0;
 // initialize roundNumber to 0
 let roundNumber = 0;
 
+// create variable called exit to allow user to exit in the middle of game
+let exit = false;
+
 // create function called getComputerChoice to get a random choice from computer
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3) + 1;
@@ -29,7 +32,14 @@ function getHumanChoice() {
       `Round : ${roundNumber}\nSCORE : User = ${humanScore}  Computer = ${computerScore}\nEnter ROCK, PAPER or SCISSOR`,
       ""
     );
-    if (!choice) continue;
+    // add a method to exit in middle or continue
+    if (!choice) {
+      exit = confirm("Do you want to Exit?");
+      if (exit) {
+        return;
+      }
+      continue;
+    }
     choice = choice.toUpperCase();
   } while (choice !== "ROCK" && choice !== "PAPER" && choice !== "SCISSOR");
 
@@ -61,7 +71,7 @@ function playGame() {
   let computerChoice = getComputerChoice();
   // get human choice
   let humanChoice = getHumanChoice();
-  // start game
+  if (exit) return;
   // evaluate winner
   playRound(humanChoice, computerChoice);
 }
@@ -72,7 +82,7 @@ function game() {
   let playAgain;
 
   // when play is true
-  do {
+  outer: do {
     // reset all variables for playing again
     humanScore = 0;
     computerScore = 0;
@@ -83,10 +93,12 @@ function game() {
       // increment roundNumber
       roundNumber++;
 
-      // end game if one scores 3 
+      // end game if one scores 3
       if (humanScore === 3 || computerScore === 3) break;
-      
+
       playGame();
+
+      if (exit) break outer;
     }
 
     // DISPLAY final result
@@ -99,10 +111,11 @@ function game() {
     }
 
     // prompt the user to exit or play again
-    playAgain = confirm("Do you want to play again?")
+    playAgain = confirm("Do you want to play again?");
   } while (playAgain == true);
 
   alert("Thank you for playing.\nHave a nice DAY!");
 }
 
+// start game
 game();
