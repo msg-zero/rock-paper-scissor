@@ -21,6 +21,19 @@ function getComputerChoice() {
 }
 
 // create function called getHumanChoice to get human choice
+function getHumanChoice() {
+    let choice;
+  
+    do {
+      choice = prompt(
+        `Round : ${roundNumber}\nSCORE : User = ${humanScore}  Computer = ${computerScore}\nEnter ROCK, PAPER or SCISSOR`,
+        ""
+      );
+      choice = choice.toUpperCase();
+    } while (choice !== ROCK || choice !== PAPER || choice !== SCISSOR);
+  
+    return choice;
+}
 
 // create function called playRound with arguments humanChoice and computerChoice to evaluate result
 
